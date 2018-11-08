@@ -12,18 +12,18 @@ IDA performs automatic code analysis, using cross-references between code sectio
 
 #### Windows
 
-Only you need to download the [idafree70_windows.exe](https://github.com/AngelKitty/IDA7.0/blob/master/idafree70_windows.exe) and double-click to install complete.
+All you need is to download the [idafree70_windows.exe](https://github.com/AngelKitty/IDA7.0/blob/master/idafree70_windows.exe) , double-click it and complete the installation.
 
 #### Linux
 
 IDA is still, as of this writing (November 7th, 2018), a 32-bit application and both IDA & its installer(*) require certain 32-bit libraries to be present on your Linux system before they can run.
 
-Here is the list of commands you will have to run in order to install those dependencies, for the following systems:
+Here is the list of commands you need to run in order to install those dependencies, for the following systems:
 
 - Debian & derivative systems such as Ubuntu, Xubuntu, …
 - Red Hat Enterprise Linux 7.2 (and likely other versions as well)
 
-> Note: we cannot possibly install & try IDA on all flavors/versions of all Linux distributions, but we will do our best to update this post with relevant information, whenever we learn of a distribution requiring special attention.
+> Note: we cannot possibly install & try IDA on all flavors/versions of all Linux distributions, but we will do our best to keep updating this post with relevant information, if we realize there is a distribution requiring special instructions.
 
 **(*) that is: if you want the installer to run a graphical interface, instead of a command-line one.**
 
@@ -41,7 +41,7 @@ sudo apt-get install libc6-i686:i386 libexpat1:i386 libffi6:i386 libfontconfig1:
 
 ##### Xubuntu 15.10 
 
-It is necessary to also run those commands, for IDA to present a usable GUI on Xubuntu 15.10:
+It is also necessary to run those commands, get a usable GUI for IDA on Xubuntu 15.10:
 
 ```shell
 sudo apt-get install libgtk2.0-0:i386 gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386 
@@ -49,7 +49,7 @@ sudo apt-get install libgtk2.0-0:i386 gtk2-engines-murrine:i386 gtk2-engines-pix
 
 ##### Red Hat Enterprise Linux 7.2
 
-IDA will require the following packages to be installed, in order to run properly on RHEL 7.2 (and probably any other RPM-based distribution) :
+IDA will require the following packages to work properly on RHEL 7.2 (and probably any other RPM-based distribution) :
 
 ```shell
 redhat-lsb-core.i686
@@ -65,7 +65,7 @@ dbus-libs.i686
 
 **Install IDA7.0**
 
-Here, we take the Ubuntu18.04 as an example.We can download the [idafree70_linux.run](https://github.com/AngelKitty/IDA7.0/blob/master/idafree70_linux.run) to your localhost, we can use the following commands to help you solve the problem.
+On Ubuntu18.04 for example. You can download the [idafree70_linux.run](https://github.com/AngelKitty/IDA7.0/blob/master/idafree70_linux.run) to your localhost, and use the following commands to install IDA.
 
 ```shell
 git clone https://github.com/AngelKitty/IDA7.0.git
@@ -74,31 +74,31 @@ chmod +x idafree70_linux.run
 ./idafree70_linux.run
 ```
 
-If you are not install the git command, you can take the following command to install.
+If you haven't installed git before, you can run following command to get git.
 
 ```shell
 sudo apt-get install git
 ```
 
-When you see the following interface, you are success.
+When you see the following interface, it means you success.
 
 ![ida-install](./images/install.png)
 
-Then you have to click next to complete the installation. When you meet the Installation Directory solution, I suggest you need to change the default path, and then select the directory /opt/... where IDA will be installed, like this:
+Then you have to click “next” to complete the installation. When you meet the Installation Directory solution, It is suggested to change the default path, and then select the directory `/opt/...` where IDA will be installed, like this:
 
 ![](./images/change-the-default-path.png)
 
-Then create a symbolic link to the /usr/bin folder.
+Then create a symbolic link to the `/usr/bin` folder.
 
 ```shell
 sudo ln -s /opt/idafree-7.0/ida64 /usr/bin
 ```
 
-Then you need to input ida64 command and it works.
+Then you can test ida64 command and it should work.
 
 ![](./images/ida64.png)
 
-Maye be you meet the problem like "Package 'libstdc++.so.5' has no installation candidate", you can run the following command to solve.
+Maybe you meet the problem like "Package 'libstdc++.so.5' has no installation candidate", you can run the following command to solve.
 
 ```shell
 sudo apt-get install libstdc++5:i386
@@ -108,7 +108,7 @@ Then you can start your ida trip.
 
 ![](./images/success.png) 
 
-Desktop entries(.desktop file) are the configuration files that describe how an application is launched and which data it can handle. They also configure how an application appears in a menu with an icon. If you want to create a .desktop file, you can create a ida.desktop and write the following code to it:
+Desktop entries(.desktop file) are the configuration files that describe how an application is launched and which type of data it can handle. They also configure how an application appears in a menu with an icon. If you want to create a .desktop file, you can create a ida.desktop and write the following lines to it:
 
 ```shell
 [Desktop Entry]
@@ -122,11 +122,11 @@ Categories=Application;Development;Utility;
 Comment=Ida Pro 64bit
 ```
 
-Save this file as "ida.desktop" in ~/.local/share/applications/ida.desktop
+Save this file as "ida.desktop" at ~/.local/share/applications/ida.desktop
 
 #### Mac
 
-Download the [idafree70_mac.tgz](https://github.com/AngelKitty/IDA7.0/blob/master/idafree70_mac.tgz) and decompress, and then you run the following command to complete.
+Download the [idafree70_mac.tgz](https://github.com/AngelKitty/IDA7.0/blob/master/idafree70_mac.tgz) and decompress, and then you can just double-click the .app file to install IDA or run the following commands to complete installation.
 
 ```shell
 cd idafree-7.0-osx-installer.app/Contents/MacOS/
@@ -134,7 +134,7 @@ chmod +x installbuilder.sh
 ./installbuilder.sh
 ```
 
-The other operates are the same as Linux.
+Other steps or configurations are the same as Linux.
 
 ### Videos
 
